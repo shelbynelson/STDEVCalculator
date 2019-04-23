@@ -9,8 +9,8 @@
 $ ./stdev_calc.py
 usage: stdev_calc.py [-h] int [int ...]
 stdev_calc.py: error: the following arguments are required: int
-
-
+```
+```
 $ ./stdev_calc.py -h
 usage: stdev_calc.py [-h] int [int ...]
 
@@ -21,20 +21,36 @@ positional arguments:
 
 optional arguments:
   -h, --help  show this help message and exit
-
-
+```
+```
 $ ./stdev_calc.py 6
 You need to enter more than one number.
-
-
+```
+```
 $ ./stdev_calc.py 6 4 14 22
 The Mean is: 11.5
 The Variance is: 67.66666666666667
 The Standard Deviation is: 8.225975119502044
-
 ```
 
-## How to run the test
+## Test Suite
+```
+$ make test
+pytest -v test.py
+=============================================== test session starts ===============================================
+platform linux -- Python 3.7.1, pytest-4.0.2, py-1.7.0, pluggy-0.8.0 -- /rsgrps/bh_class/conda/bin/python
+cachedir: .pytest_cache
+rootdir: /home/u28/shelbeezy/STDEVCalculator, inifile:
+plugins: remotedata-0.3.1, openfiles-0.3.1, doctestplus-0.2.0, arraydiff-0.3
+collected 4 items
+
+test.py::test_usage PASSED                                                                                  [ 25%]
+test.py::test_one PASSED                                                                                    [ 50%]
+test.py::test_two PASSED                                                                                    [ 75%]
+test.py::test_bad PASSED                                                                                    [100%]
+
+============================================ 4 passed in 0.39 seconds =============================================
+```
 
 ## Contact Information
 
