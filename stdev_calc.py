@@ -23,6 +23,15 @@ def get_args():
     return parser.parse_args()
 
 # --------------------------------------------------
+def warn(msg):
+    print(msg, file=sys.stderr)
+
+# -------------------------------------------------
+def die(msg='Something bad happened'):
+    warn(msg)
+    sys.exit(1)
+
+# --------------------------------------------------
 def main():
     """Make a jazz noise here"""
     args = get_args()
@@ -30,7 +39,11 @@ def main():
     length = len(num_vals)
     sum_ = 0
     sq_sum = 0
+    
+    if length == 1:
+        die('You need to enter more than one number.')
 
+   
     """Calculates the Mean"""       
     for val in range(length):
         sum_ += num_vals[val]
